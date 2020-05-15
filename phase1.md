@@ -3,6 +3,7 @@
 This is definitely the easiest phase. You could easily determine the answer by looking at the output of `strings bomb > strings.txt`, and seeing which
 string sticks out like a sore thumb.
 
+*Load up the bomb file into gdp and set breakpoints for explode_bomb and phase_1*
 ```console
 knowlel@scofield:~/project2$ gdb bomb
 GNU gdb (Ubuntu 8.1-0ubuntu3.2) 8.1.0.20180409-git
@@ -25,8 +26,8 @@ Breakpoint 1 at 0x1a78
 (gdb) break phase_1
 Breakpoint 2 at 0x1264
 ```
-*Load up the bomb file into gdp and set breakpoints for explode_bomb and phase_1*
 
+*Run the bomb, enter in something, and lets disassemble the phase_1 method.*
 ```console
 (gdb) run
 Starting program: /home/knowlel/project2/bomb 
@@ -49,7 +50,6 @@ Dump of assembler code for function phase_1:
 End of assembler dump.
 (gdb)
 ```
-*Run the bomb, enter in something, and lets disassemble the phase_1 method.
 
 Immediately, the address `0x555555556ab0` sticks out, so lets check out what's there.
 
